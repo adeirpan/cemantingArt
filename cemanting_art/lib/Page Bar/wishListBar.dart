@@ -3,14 +3,14 @@ import 'package:cemanting_art/Widget/searchBar.dart';
 import 'package:cemanting_art/model/product.dart';
 import 'package:flutter/material.dart';
 
-class Produk extends StatefulWidget {
-  const Produk({Key? key}) : super(key: key);
+class WishListBar extends StatefulWidget {
+  const WishListBar({Key? key}) : super(key: key);
 
   @override
-  State<Produk> createState() => _ProdukState();
+  State<WishListBar> createState() => _WishListBarState();
 }
 
-class _ProdukState extends State<Produk> {
+class _WishListBarState extends State<WishListBar> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,7 +33,7 @@ class _ProdukState extends State<Produk> {
                     price: 130000,
                     imageUrl: 'assets/produk1.png',
                     discount: 20,
-                    // isWhishProduct: true,
+                    isWhishProduct: true,
                   ),
                 ),
                 SizedBox(
@@ -44,34 +44,8 @@ class _ProdukState extends State<Produk> {
                     name: 'Daster Batik',
                     price: 115000,
                     imageUrl: 'assets/produk2.png',
-                    discount: 0,
-                    // isWhishProduct: true,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ProductCard(
-                  Product(
-                    name: 'Baju Batik',
-                    price: 130000,
-                    imageUrl: 'assets/produk1.png',
-                    discount: 0,
-                    // isWhishProduct: true,
-                  ),
-                ),
-                SizedBox(
-                  width: 36,
-                ),
-                ProductCard(
-                  Product(
-                    name: 'Daster Batik',
-                    price: 115000,
-                    imageUrl: 'assets/produk2.png',
-                    discount: 0,
-                    // isWhishProduct: true,
+                    discount: 15,
+                    isWhishProduct: true,
                   ),
                 ),
               ],

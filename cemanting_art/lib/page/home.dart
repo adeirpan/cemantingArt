@@ -220,15 +220,19 @@ class _HomeState extends State<Home> {
                 children: [
                   ProductCard(
                     Product(
-                        name: 'Baju Batik',
-                        price: 130000,
-                        imageUrl: 'assets/produk1.png'),
+                      name: 'Baju Batik',
+                      price: 130000,
+                      imageUrl: 'assets/produk1.png',
+                      discount: 0,
+                    ),
                   ),
                   ProductCard(
                     Product(
-                        name: 'Daster Batik',
-                        price: 115000,
-                        imageUrl: 'assets/produk2.png'),
+                      name: 'Daster Batik',
+                      price: 115000,
+                      imageUrl: 'assets/produk2.png',
+                      discount: 0,
+                    ),
                   ),
                 ],
               ),
@@ -237,15 +241,19 @@ class _HomeState extends State<Home> {
                 children: [
                   ProductCard(
                     Product(
-                        name: 'Baju Batik',
-                        price: 130000,
-                        imageUrl: 'assets/produk1.png'),
+                      name: 'Baju Batik',
+                      price: 130000,
+                      imageUrl: 'assets/produk1.png',
+                      discount: 0,
+                    ),
                   ),
                   ProductCard(
                     Product(
-                        name: 'Daster Batik',
-                        price: 115000,
-                        imageUrl: 'assets/produk2.png'),
+                      name: 'Daster Batik',
+                      price: 115000,
+                      imageUrl: 'assets/produk2.png',
+                      discount: 0,
+                    ),
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:cemanting_art/Page%20Bar/wishListBar.dart';
 import 'package:cemanting_art/page/home.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,9 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     BarHome(),
     Produk(),
+    WishListBar(),
     Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
+      'Ini Halaman Akun',
       style: optionStyle,
     ),
   ];
@@ -73,7 +71,11 @@ class _HomePageState extends State<HomePage> {
             label: 'Produk',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
+            icon: ImageIcon(
+              AssetImage(
+                'assets/icon_wishlist.png',
+              ),
+            ),
             label: 'Wishlist',
           ),
           BottomNavigationBarItem(

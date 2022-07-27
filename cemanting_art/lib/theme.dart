@@ -6,7 +6,7 @@ Color greyColor = Color(0xff4F4F4F);
 Color grey2Color = Color(0xff222222);
 Color purpleColor = Color(0xff7033FF);
 Color blackButtonColor = Color(0xff222222);
-Color yelowTextColor = Color(0xffDBA808);
+Color yelowColor = Color(0xffDBA808);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w500,
