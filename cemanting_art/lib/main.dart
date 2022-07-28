@@ -2,6 +2,7 @@ import 'package:cemanting_art/homePage.dart';
 import 'package:cemanting_art/onboarding/onboarding1.dart';
 import 'package:cemanting_art/page/home.dart';
 import 'package:cemanting_art/page/login.dart';
+import 'package:cemanting_art/page/notification.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: const OnBoarding1(),
+      // home: const NotificationPage(),
       home: HomePage(),
     );
   }

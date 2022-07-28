@@ -1,4 +1,5 @@
 import 'package:cemanting_art/model/product.dart';
+import 'package:cemanting_art/page/detailPage.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -27,41 +28,53 @@ class _ProductCardState extends State<ProductCard> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Stack(
-                children: [
-                  Image.asset(
-                    '${widget.product.imageUrl}',
-                    width: 142,
-                  ),
-                  // discount card    akan muncul ketika discount lebih dari nol
-                  if (widget.product.discount > 0)
-                    (Padding(
-                      padding: const EdgeInsets.only(
-                        top: 6,
-                        right: 7,
-                      ),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          height: 20,
-                          width: 35,
-                          decoration: BoxDecoration(
-                            color: yelowColor,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Center(
-                            child: Text(
-                              '${widget.product.discount}%',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return DetailProduk();
+                      }),
+                    ),
+                  );
+                },
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      '${widget.product.imageUrl}',
+                      width: 142,
+                    ),
+                    // discount card    akan muncul ketika discount lebih dari nol
+                    if (widget.product.discount > 0)
+                      (Padding(
+                        padding: const EdgeInsets.only(
+                          top: 6,
+                          right: 7,
+                        ),
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            height: 20,
+                            width: 35,
+                            decoration: BoxDecoration(
+                              color: yelowColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                              child: Text(
+                                '${widget.product.discount}%',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    )),
-                ],
+                      )),
+                  ],
+                ),
               ),
             ),
             Row(

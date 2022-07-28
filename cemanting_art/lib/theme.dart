@@ -16,3 +16,30 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
 TextStyle greyTextStyle = GoogleFonts.poppins(
   color: greyColor,
 );
+
+TextStyle pageTitle = GoogleFonts.poppins(
+  color: blackColor,
+  fontWeight: FontWeight.w600,
+  fontSize: 20,
+);
+
+TextStyle productTitlebold = GoogleFonts.poppins(
+  fontWeight: FontWeight.w400,
+  fontSize: 24,
+);
+
+TextStyle productTitle = GoogleFonts.poppins(
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+);
+
+TextStyle pageText = GoogleFonts.poppins(
+  fontWeight: FontWeight.w400,
+  fontSize: 12,
+);
+
+TextStyle price = GoogleFonts.poppins(
+  color: yelowColor,
+  fontWeight: FontWeight.w400,
+  fontSize: 20,
+);
