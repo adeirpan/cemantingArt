@@ -69,80 +69,87 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         iconTheme: IconThemeData(color: blackButtonColor),
       ),
       drawer: Drawer(
-        child: Padding(
-          padding: const EdgeInsets.only(
-            right: 15,
-            left: 14,
-          ),
-          child: ListView(
-            // Important: Remove any padding from the ListView.
-            // padding: EdgeInsets.zero,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                    // color: Colors.blue,
-                    ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  right: 15,
+                  left: 14,
+                ),
                 child: Column(
+                  // Important: Remove any padding from the ListView.
+                  // padding: EdgeInsets.zero,
                   children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Image.asset('assets/icon_profile.png'),
-                    Text(
-                      'Ade Irpan Hidayat',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 16,
+                    DrawerHeader(
+                      decoration: BoxDecoration(
+                          // color: Colors.blue,
+                          ),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 28,
+                          ),
+                          Image.asset('assets/icon_profile.png'),
+                          Text(
+                            'Ade Irpan Hidayat',
+                            style: blackTextStyle.copyWith(
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            'adeirpan@gmail.com',
+                            style: greyTextStyle,
+                          ),
+                        ],
                       ),
                     ),
-                    Text(
-                      'adeirpan@gmail.com',
-                      style: greyTextStyle,
+                    ListTile(
+                      title: Text(
+                        'Produk Populer',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                      onTap: () {
+                        // Navigator.pushNamed(context, '/history');
+                      },
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Color(0xff828282),
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Produk Terbaru',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                      onTap: () {},
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Color(0xff828282),
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Flash Sale',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                      onTap: () {},
+                      shape: Border(
+                        bottom: BorderSide(
+                          color: Color(0xff828282),
+                        ),
+                      ),
                     ),
                   ],
-                ),
-              ),
-              ListTile(
-                title: Text(
-                  'Produk Populer',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 16,
-                  ),
-                ),
-                onTap: () {
-                  // Navigator.pushNamed(context, '/history');
-                },
-                shape: Border(
-                  bottom: BorderSide(
-                    color: Color(0xff828282),
-                  ),
-                ),
-              ),
-              ListTile(
-                title: Text(
-                  'Produk Terbaru',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 16,
-                  ),
-                ),
-                onTap: () {},
-                shape: Border(
-                  bottom: BorderSide(
-                    color: Color(0xff828282),
-                  ),
-                ),
-              ),
-              ListTile(
-                title: Text(
-                  'Flash Sale',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 16,
-                  ),
-                ),
-                onTap: () {},
-                shape: Border(
-                  bottom: BorderSide(
-                    color: Color(0xff828282),
-                  ),
                 ),
               ),
             ],
