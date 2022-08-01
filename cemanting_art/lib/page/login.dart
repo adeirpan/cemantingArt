@@ -1,3 +1,4 @@
+import 'package:cemanting_art/homePage.dart';
 import 'package:cemanting_art/page/register.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
@@ -113,22 +114,30 @@ class _LoginState extends State<Login> {
                   width: MediaQuery.of(context).size.width,
                   child: RaisedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                content: Text('berhasil login'),
-                                actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(context, 'OK'),
-                                    child: const Text('OK'),
-                                  ),
-                                ],
-                              );
-                            });
-                      }
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomePage();
+                          },
+                        ),
+                      );
+                      // if (_formKey.currentState!.validate()) {
+                      //   showDialog(
+                      //       context: context,
+                      //       builder: (BuildContext context) {
+                      //         return AlertDialog(
+                      //           content: Text('berhasil login'),
+                      //           actions: <Widget>[
+                      //             TextButton(
+                      //               onPressed: () =>
+                      //                   Navigator.pop(context, 'OK'),
+                      //               child: const Text('OK'),
+                      //             ),
+                      //           ],
+                      //         );
+                      //       });
+                      // }
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25)),

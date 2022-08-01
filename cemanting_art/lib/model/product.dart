@@ -3,12 +3,12 @@ class Product {
   double price;
   String imageUrl;
   bool isWhishProduct;
-  double discount;
+  int discount;
 
   Product(
       {required this.name,
       required this.price,
       required this.imageUrl,
-      required this.discount,
+      this.discount = 0,
       this.isWhishProduct = false});
 }

@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -128,7 +128,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     InkWell(
@@ -154,7 +154,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     InkWell(
@@ -180,7 +180,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     InkWell(
@@ -211,7 +211,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
 
