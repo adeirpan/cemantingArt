@@ -13,6 +13,8 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  bool _konfirm = true;
+  bool _regis =  true;
   final _formKey = GlobalKey<FormState>();
   final usernameTextFieldController = TextEditingController();
   final emailTextFieldController = TextEditingController();
@@ -67,11 +69,11 @@ class _RegisterState extends State<Register> {
                   autofocus: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.symmetric(vertical: 0),
+                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Input Your Name';
+                      return 'Masukan username yang sesuai';
                     }
                     return null;
                   },
@@ -92,7 +94,7 @@ class _RegisterState extends State<Register> {
                   autofocus: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.symmetric(vertical: 0),
+                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -103,7 +105,7 @@ class _RegisterState extends State<Register> {
                     }
                     return null;
                   },
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.emailAddress,
                   autofillHints: [AutofillHints.email],
                 ),
                 SizedBox(
@@ -119,10 +121,18 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   controller: passwordTextFieldController,
                   autofocus: true,
-                  obscureText: true,
+                  obscureText: _regis,
                   decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                    icon: Icon(
+                        _regis ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _regis = !_regis;
+                      });
+                    }),
                     border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.symmetric(vertical: 0),
+                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -147,18 +157,26 @@ class _RegisterState extends State<Register> {
                 ),
                 TextFormField(
                   controller: retypePasswordTextFieldController,
-                  obscureText: true,
+                  obscureText: _konfirm,
                   autofocus: true,
                   decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                    icon: Icon(
+                        _konfirm ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _konfirm = !_konfirm;
+                      });
+                    }),
                     border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.symmetric(vertical: 0),
+                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Ketik ulang password anda';
                     }
                     if (value != passwordTextFieldController.text) {
-                      return "password tidak sama";
+                      return "Password tidak sesuai";
                     }
                     return null;
                   },

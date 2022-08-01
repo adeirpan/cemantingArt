@@ -13,6 +13,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _login = true;
+  
   final _formKey = GlobalKey<FormState>();
   final emailTextFieldController = TextEditingController();
   final passwordTextFieldController = TextEditingController();
@@ -91,8 +93,17 @@ class _LoginState extends State<Login> {
                 TextFormField(
                   controller: passwordTextFieldController,
                   autofocus: true,
-                  obscureText: true,
+                  obscureText: _login,
+                
                   decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                    icon: Icon(
+                        _login ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _login = !_login;
+                      });
+                    }),
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) {
@@ -104,7 +115,7 @@ class _LoginState extends State<Login> {
                     }
                     return null;
                   },
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                   height: 69,

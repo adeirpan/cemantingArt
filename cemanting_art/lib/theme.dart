@@ -17,6 +17,10 @@ TextStyle greyTextStyle = GoogleFonts.poppins(
   color: greyColor,
 );
 
+TextStyle yelowTextStyle = GoogleFonts.poppins(
+  color: yelowColor,
+);
+
 TextStyle pageTitle = GoogleFonts.poppins(
   color: blackColor,
   fontWeight: FontWeight.w600,
