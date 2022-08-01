@@ -1,6 +1,5 @@
 import 'package:cemanting_art/homePage.dart';
 import 'package:cemanting_art/onboarding/onBoarding.dart';
-import 'package:cemanting_art/onboarding/onboarding1.dart';
 import 'package:cemanting_art/page/home.dart';
 import 'package:cemanting_art/page/login.dart';
 import 'package:cemanting_art/page/notification.dart';

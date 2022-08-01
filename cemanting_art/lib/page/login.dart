@@ -1,6 +1,8 @@
+import 'package:cemanting_art/page/register.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:email_validator/email_validator.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -10,126 +12,183 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+  final emailTextFieldController = TextEditingController();
+  final passwordTextFieldController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: 20,
-          right: 20,
-          top: 48,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 20,
+            right: 20,
+            top: 48,
+          ),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Text(
+                    'MASUK',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Center(
+                  child: Image.asset(
+                    'assets/login.png',
+                    height: 200,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Email',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                TextFormField(
+                  controller: emailTextFieldController,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please input your email!';
+                    }
+                    if (value != null && !EmailValidator.validate(value)) {
+                      return "Enter a Valid Email";
+                    }
+                    return null;
+                  },
+                  keyboardType: TextInputType.text,
+                  autofillHints: [AutofillHints.email],
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Text(
+                  'Password',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                TextFormField(
+                  controller: passwordTextFieldController,
+                  autofocus: true,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'input password';
+                    }
+                    if (value.length < 7) {
+                      return 'Password must be at least 7 characters';
+                    }
+                    return null;
+                  },
+                  keyboardType: TextInputType.text,
+                ),
+                SizedBox(
+                  height: 69,
+                ),
+                Container(
+                  height: 48,
+                  width: MediaQuery.of(context).size.width,
+                  child: RaisedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                content: Text('berhasil login'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(context, 'OK'),
+                                    child: const Text('OK'),
+                                  ),
+                                ],
+                              );
+                            });
+                      }
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
+                    color: blackButtonColor,
+                    child: Text(
+                      'MASUK',
+                      style: GoogleFonts.poppins(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  height: 60,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Belum punya akun?',
+                        style: greyTextStyle.copyWith(
+                          color: Color(0xff1C1D1D),
+                          fontSize: 16,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) {
+                                return Register();
+                              }),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Buat Akun',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 16,
+                            color: yelowColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 100,
+                ),
+              ],
+            ),
+          ),
         ),
-        child: Form(
-            child: ListView(
-          children: [
-            Center(
-              child: Text(
-                'MASUK',
-                style: blackTextStyle.copyWith(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Image.asset(
-              'assets/login.png',
-              height: 200,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Email',
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            Container(
-              height: 32,
-              child: TextFormField(
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                  ),
-                ),
-                keyboardType: TextInputType.text,
-              ),
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Text(
-              'Password',
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-            Container(
-              height: 32,
-              child: TextFormField(
-                autofocus: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                  ),
-                ),
-                keyboardType: TextInputType.text,
-              ),
-            ),
-            SizedBox(
-              height: 69,
-            ),
-            Container(
-              height: 48,
-              child: RaisedButton(
-                onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-                color: purpleColor,
-                child: Text(
-                  'MASUK',
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        )),
       ),
-      bottomSheet: Container(
-        height: 60,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Belum punya akun?',
-              style: greyTextStyle.copyWith(
-                color: Color(0xff1C1D1D),
-                fontSize: 16,
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Buat Akun',
-                style: blackTextStyle.copyWith(
-                  fontSize: 16,
-                  color: purpleColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      // bottomSheet:
     );
   }
 }

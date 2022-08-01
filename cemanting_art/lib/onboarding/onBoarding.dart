@@ -1,4 +1,5 @@
 import 'package:cemanting_art/homePage.dart';
+import 'package:cemanting_art/page/login.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/onboarding.dart';
@@ -270,7 +271,7 @@ class _OnBoardingState extends State<OnBoarding> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return HomePage();
+                                  return Login();
                                 },
                               ),
                             );

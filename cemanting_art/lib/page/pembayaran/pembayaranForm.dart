@@ -1,3 +1,4 @@
+import 'package:cemanting_art/page/ketentuan.dart';
 import 'package:cemanting_art/page/pembayaran/pembayaran_sukses.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
@@ -116,7 +117,28 @@ class _PembayaranFormState extends State<PembayaranForm> {
                       SizedBox(
                         width: 8,
                       ),
-                      Text('Setuju dengan ketentuan Cemanting'),
+                      Text(
+                        'Setuju dengan',
+                        style: greyTextStyle,
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return KetentuanPage();
+                              },
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'ketentuan Cemanting',
+                          style: greyTextStyle.copyWith(
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
