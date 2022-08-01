@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                     }
                     return null;
                   },
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.emailAddress,
                   autofillHints: [AutofillHints.email],
                 ),
                 SizedBox(
