@@ -2,6 +2,7 @@ import 'package:cemanting_art/model/product.dart';
 import 'package:cemanting_art/page/detailPage.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ProductCard extends StatefulWidget {
   Product product;
@@ -88,7 +89,10 @@ class _ProductCardState extends State<ProductCard> {
                       style: blackTextStyle,
                     ),
                     Text(
-                      '${widget.product.price}',
+                      NumberFormat.currency(
+                              locale: 'id', decimalDigits: 0, symbol: "Rp. ")
+                          .format(widget.product.price),
+                      // '${widget.product.price}',
                       style: blackTextStyle.copyWith(
                         color: yelowColor,
                       ),
