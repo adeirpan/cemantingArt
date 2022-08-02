@@ -1,3 +1,4 @@
+import 'package:cemanting_art/page/login.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -35,54 +36,61 @@ class AkunBar extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Container(
-              height: 48,
-              child: Row(
-                children: [
-                  Icon(
+           Container(
+                child: OutlinedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    fixedSize: const Size(340, 48),
+                  ),
+                  icon: Icon(
                     Icons.edit,
-                    color: greyColor,
+                    size: 20,
+                    color: Color(0xff4F4F4F),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Edit Akun',
+                  label: Text(
+                    "Edit Akun",
                     style: blackTextStyle.copyWith(
-                      fontSize: 16,
-                      color: greyColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
                     ),
-                  )
-                ],
-              ),
-            ),
+                  ),
+                )),
+                SizedBox(
+                  height: 16,
+                ),
+            Container(
+                child: OutlinedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    fixedSize: const Size(340, 48),
+                  ),
+                  icon: Icon(
+                    Icons.logout,
+                    size: 20,
+                    color: Color(0xff4F4F4F),
+                  ),
+                  label: Text(
+                    "Keluar",
+                    style: blackTextStyle.copyWith(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                )),
             SizedBox(
               height: 10,
             ),
-            Divider(
-              color: Color(0xff828282),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.logout,
-                  color: greyColor,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  'Keluar',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 16,
-                    color: greyColor,
-                  ),
-                )
-              ],
-            ),
+         
           ],
         ),
       ),

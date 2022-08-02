@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Color(0xffDBA808), 
         onTap: _onItemTapped,
       ),
     );
