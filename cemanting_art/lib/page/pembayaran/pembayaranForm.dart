@@ -11,6 +11,8 @@ class PembayaranForm extends StatefulWidget {
 }
 
 class _PembayaranFormState extends State<PembayaranForm> {
+   int? _value = 1;
+   int? _kirim = 1;
   final _formKey = GlobalKey<FormState>();
   final alamatTextFieldController = TextEditingController();
 
@@ -26,7 +28,7 @@ class _PembayaranFormState extends State<PembayaranForm> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
-        actions: [],
+
         iconTheme: IconThemeData(color: blackButtonColor),
       ),
       body: SafeArea(
@@ -38,7 +40,9 @@ class _PembayaranFormState extends State<PembayaranForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Alamat Anda'),
+                  Text('Alamat Anda',style: blackTextStyle.copyWith(
+                    fontSize:16
+                  ),),
                   TextFormField(
                     minLines: 5,
                     maxLines: 5,
@@ -61,36 +65,179 @@ class _PembayaranFormState extends State<PembayaranForm> {
                   SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    children: [
-                      Icon(Icons.credit_card),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Text('Debit'),
-                    ],
-                  ),
+                  Text('Pilih Metode Pembayaran',
+                  style: blackTextStyle.copyWith(
+                    fontSize:16
+                  ),),
                   SizedBox(
                     height: 16,
                   ),
-                  Divider(
-                    height: 6,
-                    color: Color(0xff828282),
-                  ),
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff828282), width: 1.0),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, right: 20, left: 20, bottom: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Debit",
+                            style: blackTextStyle.copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                           Radio(
+                            value: 1,
+                            groupValue: _value,
+                            activeColor: Color(0xffDBA808), 
+                            hoverColor: Color(0xff222222),
+                            onChanged: (value) {
+                              setState(() {
+                                _value = value as int?;
+                              });
+                            },
+                          )
+                       
+                        ],
+                      ),
+                    )),
+                
+                  
                   SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    children: [
-                      Image.asset('assets/cil_cash.png'),
-                      SizedBox(
-                        width: 16,
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff828282), width: 1.0),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, right: 20, left: 20, bottom: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Cash On Delivery (COD)",
+                            style: blackTextStyle.copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                           Radio(
+                            value: 2,
+                            groupValue: _value,
+                            activeColor: Color(0xffDBA808), 
+                            hoverColor: Color(0xff222222),
+                            onChanged: (value) {
+                              setState(() {
+                                _value = value as int?;
+                              });
+                            },
+                          )
+                       
+                        ],
                       ),
-                      Text('Cash On Delivery (COD)'),
-                    ],
-                  ),
+                    )),
                   SizedBox(
-                    height: 40,
+                    height: 20,
+                  ),
+                    Text('Pilih Pengiriman',
+                  style: blackTextStyle.copyWith(
+                    fontSize:16
+                  ),),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff828282), width: 1.0),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, right: 20, left: 20, bottom: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Express",
+                            style: blackTextStyle.copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                           Radio(
+                            value: 1,
+                            groupValue: _kirim,
+                            activeColor: Color(0xffDBA808), 
+                            hoverColor: Color(0xff222222),
+                            onChanged: (value) {
+                              setState(() {
+                                _kirim = value as int?;
+                              });
+                            },
+                          )
+                       
+                        ],
+                      ),
+                    )),
+
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Container(
+                    height: 60,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Color(0xff828282), width: 1.0),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: 20, right: 20, left: 20, bottom: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Reguler",
+                            style: blackTextStyle.copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                           Radio(
+                            value: 2,
+                            groupValue: _kirim,
+                            activeColor: Color(0xffDBA808), 
+                            hoverColor: Color(0xff222222),
+                            onChanged: (value) {
+                              setState(() {
+                                _kirim = value as int?;
+                              });
+                            },
+                          )
+                       
+                        ],
+                      ),
+                    )),
+                  
+                  SizedBox(
+                    height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -103,6 +250,8 @@ class _PembayaranFormState extends State<PembayaranForm> {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Checkbox(
+                          activeColor: Color(0xffDBA808),
+                          hoverColor: Color(0xff222222),
                           materialTapTargetSize:
                               MaterialTapTargetSize.shrinkWrap,
                           value: isAcceptedTerm,
@@ -152,7 +301,7 @@ class _PembayaranFormState extends State<PembayaranForm> {
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
+                            borderRadius: BorderRadius.circular(25.0),
                             // side: BorderSide(color: Colors.red),
                           ),
                         ),
@@ -185,7 +334,7 @@ class _PembayaranFormState extends State<PembayaranForm> {
             ),
           ),
         ),
-      ),
-    );
+      ),);
+    
   }
 }
