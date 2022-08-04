@@ -115,7 +115,7 @@ class _LoginState extends State<Login> {
                     }
                     return null;
                   },
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.text,
                 ),
                 SizedBox(
                   height: 69,
