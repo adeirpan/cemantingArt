@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: AkunBar(),
-      home: HomePage(),
+      home: OnBoarding(),
+      // home: HomePage(),
     );
   }
 }

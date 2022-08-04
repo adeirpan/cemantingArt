@@ -277,7 +277,7 @@ class _DetailProdukState extends State<DetailProduk> {
                 width: 140,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
