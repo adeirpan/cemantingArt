@@ -30,6 +30,7 @@ class _NotificationPageState extends State<NotificationPage> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: ListView(
+            physics: BouncingScrollPhysics(),
             children: [
               Container(
                 height: 48,

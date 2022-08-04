@@ -32,6 +32,7 @@ class _PembayaranFormState extends State<PembayaranForm> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Form(

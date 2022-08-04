@@ -14,7 +14,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   bool _konfirm = true;
-  bool _regis =  true;
+  bool _regis = true;
   final _formKey = GlobalKey<FormState>();
   final usernameTextFieldController = TextEditingController();
   final emailTextFieldController = TextEditingController();
@@ -69,7 +69,6 @@ class _RegisterState extends State<Register> {
                   autofocus: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -94,7 +93,6 @@ class _RegisterState extends State<Register> {
                   autofocus: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -124,15 +122,14 @@ class _RegisterState extends State<Register> {
                   obscureText: _regis,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
-                    icon: Icon(
-                        _regis ? Icons.visibility : Icons.visibility_off),
-                    onPressed: () {
-                      setState(() {
-                        _regis = !_regis;
-                      });
-                    }),
+                        icon: Icon(
+                            _regis ? Icons.visibility : Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            _regis = !_regis;
+                          });
+                        }),
                     border: OutlineInputBorder(),
-                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -161,15 +158,14 @@ class _RegisterState extends State<Register> {
                   autofocus: true,
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
-                    icon: Icon(
-                        _konfirm ? Icons.visibility : Icons.visibility_off),
-                    onPressed: () {
-                      setState(() {
-                        _konfirm = !_konfirm;
-                      });
-                    }),
+                        icon: Icon(
+                            _konfirm ? Icons.visibility : Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            _konfirm = !_konfirm;
+                          });
+                        }),
                     border: OutlineInputBorder(),
-                    
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {

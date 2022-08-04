@@ -27,6 +27,7 @@ class _DetailProdukState extends State<DetailProduk> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -19,6 +19,7 @@ class _WishListBarState extends State<WishListBar> {
           horizontal: 20,
         ),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             SearchBar(),
             SizedBox(

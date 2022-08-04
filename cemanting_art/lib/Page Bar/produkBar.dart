@@ -19,6 +19,7 @@ class _ProdukState extends State<Produk> {
           horizontal: 20,
         ),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             SearchBar(),
             SizedBox(

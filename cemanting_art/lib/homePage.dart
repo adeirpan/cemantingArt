@@ -1,6 +1,5 @@
 import 'package:cemanting_art/Page%20Bar/akunBar.dart';
 import 'package:cemanting_art/Page%20Bar/wishListBar.dart';
-import 'package:cemanting_art/page/home.dart';
 import 'package:cemanting_art/page/notification.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
@@ -191,7 +190,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xffDBA808), 
+        selectedItemColor: Color(0xffDBA808),
         onTap: _onItemTapped,
       ),
     );

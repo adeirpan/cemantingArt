@@ -11,6 +11,7 @@ class AkunBar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             Row(
               children: [
@@ -36,61 +37,60 @@ class AkunBar extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-           Container(
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Login()),
-                    );
-                  },
-                  style: OutlinedButton.styleFrom(
-                    fixedSize: const Size(340, 48),
-                  ),
-                  icon: Icon(
-                    Icons.edit,
-                    size: 20,
-                    color: Color(0xff4F4F4F),
-                  ),
-                  label: Text(
-                    "Edit Akun",
-                    style: blackTextStyle.copyWith(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                )),
-                SizedBox(
-                  height: 16,
-                ),
             Container(
                 child: OutlinedButton.icon(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Login()),
-                    );
-                  },
-                  style: OutlinedButton.styleFrom(
-                    fixedSize: const Size(340, 48),
-                  ),
-                  icon: Icon(
-                    Icons.logout,
-                    size: 20,
-                    color: Color(0xff4F4F4F),
-                  ),
-                  label: Text(
-                    "Keluar",
-                    style: blackTextStyle.copyWith(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                )),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                fixedSize: const Size(340, 48),
+              ),
+              icon: Icon(
+                Icons.edit,
+                size: 20,
+                color: Color(0xff4F4F4F),
+              ),
+              label: Text(
+                "Edit Akun",
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            )),
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+                child: OutlinedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                fixedSize: const Size(340, 48),
+              ),
+              icon: Icon(
+                Icons.logout,
+                size: 20,
+                color: Color(0xff4F4F4F),
+              ),
+              label: Text(
+                "Keluar",
+                style: blackTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            )),
             SizedBox(
               height: 10,
             ),
-         
           ],
         ),
       ),

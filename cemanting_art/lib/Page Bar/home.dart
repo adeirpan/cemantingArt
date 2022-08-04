@@ -16,6 +16,7 @@ class _BarHomeState extends State<BarHome> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
