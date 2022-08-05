@@ -118,7 +118,7 @@ class _LoginState extends State<Login> {
                   keyboardType: TextInputType.text,
                 ),
                 SizedBox(
-                  height: 69,
+                  height: 70,
                 ),
                 Container(
                   height: 48,

@@ -9,7 +9,7 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  bool showPassword = false;
+  bool _login = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,17 +41,31 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       width: 130,
                       height: 130,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              width: 4,
-                              color: Theme.of(context).scaffoldBackgroundColor),
                           
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                "https://images.pexels.com/photos/3307758/pexels-photo-3307758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250",
+                                "https://www.leisureopportunities.co.uk/images/995586_746594.jpg",
                               ))),
+                              
                     ),
+                    Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                           
+                            color: Color(0xff222222),
+                          ),
+                          child: Icon(
+                            Icons.edit,
+                            color: Colors.white,
+                          ),
+                        )),
                     
                   ],
                 ),
@@ -81,6 +95,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   },
                   keyboardType: TextInputType.text,
                 ),
+                SizedBox(
+                  height: 12,
+                ),
               Text(
                   'Email',
                   style: blackTextStyle.copyWith(
@@ -105,11 +122,46 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   keyboardType: TextInputType.emailAddress,
                   autofillHints: [AutofillHints.email],
                 ),
+                
                 SizedBox(
                   height: 12,
                 ),
+                Text(
+                  'Password',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                TextFormField(
+                  
+                  autofocus: true,
+                  obscureText: _login,
+                
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                    icon: Icon(
+                        _login ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _login = !_login;
+                      });
+                    }),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'input password';
+                    }
+                    if (value.length < 7) {
+                      return 'Password must be at least 7 characters';
+                    }
+                    return null;
+                  },
+                  keyboardType: TextInputType.text,
+                ),
               SizedBox(
-                height: 35,
+                height: 60,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,11 +176,25 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
             child: Text('BATAL', style: blackTextStyle.copyWith(fontSize: 14),),
             onPressed: () {
-              print('Pressed');
+               Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return AkunBar();
+                          },
+                        ),
+                      );
             },
           ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () { Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return AkunBar();
+                          },
+                        ),
+                      );},
                     color: Color(0xff222222),
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     shape: RoundedRectangleBorder(
@@ -150,37 +216,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     );
   }
 
-  Widget buildTextField(
-      String labelText, String placeholder, bool isPasswordTextField) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 35.0),
-      child: TextField(
-        obscureText: isPasswordTextField ? showPassword : false,
-        decoration: InputDecoration(
-            suffixIcon: isPasswordTextField
-                ? IconButton(
-                    onPressed: () {
-                      setState(() {
-                        showPassword = !showPassword;
-                      });
-                    },
-                    icon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.grey,
-                    ),
-                  )
-                : null,
-            contentPadding: EdgeInsets.only(bottom: 3),
-            labelText: labelText,
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            hintText: placeholder,
-            hintStyle: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            )),
-      ),
-    );
-  }
+ 
+  
 }
 
