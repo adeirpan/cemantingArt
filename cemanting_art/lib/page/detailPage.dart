@@ -283,13 +283,23 @@ class _DetailProdukState extends State<DetailProduk> {
                         builder: (context) {
                           return PembayaranForm();
                         },
+                        
                       ),
+                      
                     );
+                    
                   },
+                  
                   child: Text(
                     "Beli",
                   ),
                   style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                            
+                          )
+                        ),
                       backgroundColor:
                           MaterialStateProperty.all(blackButtonColor)),
                 ),

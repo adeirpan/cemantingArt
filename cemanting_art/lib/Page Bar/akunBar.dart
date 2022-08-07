@@ -8,19 +8,8 @@ class AkunBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(
-          'Edit Profile',
-          style: blackTextStyle,
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: blackButtonColor),
-      ),
-    body:SafeArea(  
+  
+    return SafeArea(  
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
@@ -124,6 +113,6 @@ class AkunBar extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 }
