@@ -22,7 +22,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
-        actions: [],
         iconTheme: IconThemeData(color: blackButtonColor),
       ),
       body: Container(
