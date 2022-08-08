@@ -57,16 +57,15 @@ class AkunBar extends StatelessWidget {
               height: 40,
             ),
             Container(
-                child: OutlinedButton.icon(
+                child: FlatButton.icon(
+                  
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) =>EditProfilePage()),
                 );
               },
-              style: OutlinedButton.styleFrom(
-                fixedSize: const Size(340, 48),
-              ),
+             
               icon: Icon(
                 Icons.edit,
                 size: 20,
@@ -75,41 +74,103 @@ class AkunBar extends StatelessWidget {
               label: Text(
                 "Edit Akun",
                 style: blackTextStyle.copyWith(
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             )),
-            SizedBox(
-              height: 16,
+            Divider(
+               thickness: 1,
+               color: Color(0xff4F4F4F),
             ),
             Container(
-                child: OutlinedButton.icon(
+                child: FlatButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Login()),
                 );
               },
-              style: OutlinedButton.styleFrom(
-                fixedSize: const Size(340, 48),
-              ),
+              
               icon: Icon(
-                Icons.logout,
+                Icons.receipt_long,
                 size: 20,
                 color: Color(0xff4F4F4F),
               ),
               label: Text(
-                "Keluar",
+                "Daftar Transaksi",
                 style: blackTextStyle.copyWith(
-                  fontSize: 14,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            )),
+            Divider(
+               thickness: 1,
+               color: Color(0xff4F4F4F),
+            ),
+            Container(
+                child: FlatButton.icon(
+              onPressed: () {
+                showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    content: Text("Silakan Hubungi Nomor 081xxxxxxxxx"),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(context, 'OK'),
+                                        child: const Text('OK'),
+                                      ),
+                                    ],
+                                  );
+                                });
+              },
+              
+              icon: Icon(
+                Icons.info,
+                size: 20,
+                color: Color(0xff4F4F4F),
+              ),
+              label: Text(
+                "Layanan Kami",
+                style: blackTextStyle.copyWith(
+                  fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             )),
             SizedBox(
-              height: 10,
+              height: 200,
             ),
+            Container(
+                  height: 48,
+                  width: MediaQuery.of(context).size.width,
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Login();
+                          },
+                        ),
+                      );
+            
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
+                    color: blackButtonColor,
+                    child: Text(
+                      'Keluar',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
           ],
         ),
       ),
