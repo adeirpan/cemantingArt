@@ -152,7 +152,11 @@ class AkunBar extends StatelessWidget {
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(context, 'OK'),
-                                        child: const Text('OK'),
+                                        child: Text('OK', style: blackTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),),
+                                        
                                       ),
                                     ],
                                   );
