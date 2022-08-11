@@ -1,6 +1,7 @@
 import 'package:cemanting_art/Page%20Bar/akunBar.dart';
 import 'package:cemanting_art/homePage.dart';
 import 'package:cemanting_art/onboarding/onBoarding.dart';
+import 'package:cemanting_art/page/daftarTransaksi.dart';
 import 'package:cemanting_art/page/edit.dart';
 import 'package:cemanting_art/page/login.dart';
 import 'package:cemanting_art/page/notification.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: OnBoarding(),
       // home: HomePage(),
     );
   }

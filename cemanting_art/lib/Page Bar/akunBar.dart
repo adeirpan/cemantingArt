@@ -1,3 +1,4 @@
+import 'package:cemanting_art/page/daftarTransaksi.dart';
 import 'package:cemanting_art/page/edit.dart';
 import 'package:cemanting_art/page/login.dart';
 import 'package:cemanting_art/theme.dart';
@@ -88,7 +89,7 @@ class AkunBar extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Login()),
+                  MaterialPageRoute(builder: (context) => DaftarTransaksi()),
                 );
               },
               
