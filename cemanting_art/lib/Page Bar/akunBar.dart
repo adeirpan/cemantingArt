@@ -1,6 +1,7 @@
 import 'package:cemanting_art/page/daftarTransaksi.dart';
 import 'package:cemanting_art/page/edit.dart';
 import 'package:cemanting_art/page/login.dart';
+import 'package:cemanting_art/page/tentangKami.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +59,7 @@ class AkunBar extends StatelessWidget {
               height: 40,
             ),
             Container(
-                child: FlatButton.icon(
+                child: FlatButton(
                   
               onPressed: () {
                 Navigator.push(
@@ -67,51 +68,80 @@ class AkunBar extends StatelessWidget {
                 );
               },
              
-              icon: Icon(
-                Icons.edit,
-                size: 20,
-                color: Color(0xff4F4F4F),
+        child: Container(
+          child:Row(
+            children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.edit,
+                  size: 20,
+                  color: Color(0xff4F4F4F),)
               ),
-              label: Text(
-                "Edit Akun",
-                style: blackTextStyle.copyWith(
+              Container(
+                  margin: const EdgeInsets.only( left: 10.0 ),
+                  child: Text(
+                    "Edit Akun",
+                    style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
-              ),
+                  )
+              )
+            ],
+          ),
+        ),
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0)
+        )
             )),
             Divider(
                thickness: 1,
                color: Color(0xff4F4F4F),
             ),
             Container(
-                child: FlatButton.icon(
+              
+                child: FlatButton(
+                  
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => DaftarTransaksi()),
+                  
                 );
               },
-              
-              icon: Icon(
-                Icons.receipt_long,
-                size: 20,
-                color: Color(0xff4F4F4F),
+              child: Container(
+          child:Row(
+            children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.receipt_long,
+                  size: 20,
+                  color: Color(0xff4F4F4F),)
               ),
-              label: Text(
-                "Daftar Transaksi",
-                style: blackTextStyle.copyWith(
+              Container(
+                  margin: const EdgeInsets.only( left: 10.0 ),
+                  child: Text(
+                    "Daftar Transaksi",
+                    style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
-              ),
+                  )
+              )
+            ],
+          ),
+        ),
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0)
+        )
             )),
             Divider(
                thickness: 1,
                color: Color(0xff4F4F4F),
             ),
             Container(
-                child: FlatButton.icon(
+              
+                child: FlatButton(
               onPressed: () {
                 showDialog(
                                 context: context,
@@ -129,18 +159,71 @@ class AkunBar extends StatelessWidget {
                                 });
               },
               
-              icon: Icon(
-                Icons.info,
-                size: 20,
-                color: Color(0xff4F4F4F),
+              child: Container(
+                child:Row(
+                  children: [
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Icon(Icons.call,
+                        size: 20,
+                        color: Color(0xff4F4F4F),)
+                    ),
+                    Container(
+                        margin: const EdgeInsets.only( left: 10.0 ),
+                        child: Text(
+                          "Layanan Kami",
+                          style: blackTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                        )
+                )
+            ],
+          ),
+        ),
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0)
+        )
+            )),
+             Divider(
+               thickness: 1,
+               color: Color(0xff4F4F4F),
+            ),
+            Container(
+              
+                child: FlatButton(                  
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TentangKami()),
+                  
+                );
+              },
+              child: Container(
+          child:Row(
+            children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.info,
+                  size: 20,
+                  color: Color(0xff4F4F4F),)
               ),
-              label: Text(
-                "Layanan Kami",
-                style: blackTextStyle.copyWith(
+              Container(
+                  margin: const EdgeInsets.only( left: 10.0 ),
+                  child: Text(
+                    "Tentang Kami",
+                    style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
-              ),
+                  )
+              )
+            ],
+          ),
+        ),
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(5.0)
+        )
             )),
             SizedBox(
               height: 200,
@@ -172,6 +255,7 @@ class AkunBar extends StatelessWidget {
                     ),
                   ),
                 ),
+                
           ],
         ),
       ),
