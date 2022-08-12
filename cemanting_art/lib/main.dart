@@ -1,3 +1,4 @@
+import 'package:cemanting_art/Drawer/flashSale.dart';
 import 'package:cemanting_art/Page%20Bar/akunBar.dart';
 import 'package:cemanting_art/homePage.dart';
 import 'package:cemanting_art/onboarding/onBoarding.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: OnBoarding(),
+      home: FlashSale(),
       // home: HomePage(),
     );
   }

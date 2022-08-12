@@ -27,7 +27,7 @@ class _ProductCardState extends State<ProductCard> {
               height: 180,
               width: 142,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: InkWell(
                 onTap: () {
@@ -50,8 +50,8 @@ class _ProductCardState extends State<ProductCard> {
                     if (widget.product.discount > 0)
                       (Padding(
                         padding: const EdgeInsets.only(
-                          top: 6,
-                          right: 7,
+                          top: 10,
+                          right: 18,
                         ),
                         child: Align(
                           alignment: Alignment.topRight,
