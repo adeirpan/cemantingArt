@@ -1,3 +1,4 @@
+import 'package:cemanting_art/Drawer/flashSale.dart';
 import 'package:cemanting_art/Page%20Bar/akunBar.dart';
 import 'package:cemanting_art/Page%20Bar/wishListBar.dart';
 import 'package:cemanting_art/page/notification.dart';
@@ -105,6 +106,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ),
                     ),
                     ListTile(
+                      
                       title: Text(
                         'Produk Populer',
                         style: blackTextStyle.copyWith(
@@ -112,6 +114,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       onTap: () {
+                        
                         // Navigator.pushNamed(context, '/history');
                       },
                       shape: Border(
@@ -138,10 +141,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       title: Text(
                         'Flash Sale',
                         style: blackTextStyle.copyWith(
+                          
                           fontSize: 16,
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return FlashSale();
+                      }),
+                    ),
+                  );
+                        
+                      },
                       shape: Border(
                         bottom: BorderSide(
                           color: Color(0xff828282),
