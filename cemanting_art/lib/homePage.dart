@@ -1,4 +1,6 @@
 import 'package:cemanting_art/Drawer/flashSale.dart';
+import 'package:cemanting_art/Drawer/popular.dart';
+import 'package:cemanting_art/Drawer/produkBaru.dart';
 import 'package:cemanting_art/Page%20Bar/akunBar.dart';
 import 'package:cemanting_art/Page%20Bar/wishListBar.dart';
 import 'package:cemanting_art/page/notification.dart';
@@ -114,7 +116,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       onTap: () {
-                        
+                        Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return Popular();
+                      }),
+                    ),
+                  );
                         // Navigator.pushNamed(context, '/history');
                       },
                       shape: Border(
@@ -130,7 +139,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           fontSize: 16,
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return ProdukBaru();
+                      }),
+                    ),
+                  );
+                      },
                       shape: Border(
                         bottom: BorderSide(
                           color: Color(0xff828282),
