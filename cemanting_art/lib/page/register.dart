@@ -218,7 +218,7 @@ class _RegisterState extends State<Register> {
                 SizedBox(
                   height: 50,
                 ),
-
+                
                 // paling bawah
                 Container(
                   height: 60,
@@ -255,9 +255,7 @@ class _RegisterState extends State<Register> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 100,
-                ),
+
               ],
             ),
           ),

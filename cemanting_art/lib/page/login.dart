@@ -1,4 +1,5 @@
 import 'package:cemanting_art/homePage.dart';
+import 'package:cemanting_art/page/lupaPassword.dart';
 import 'package:cemanting_art/page/register.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
@@ -117,6 +118,26 @@ class _LoginState extends State<Login> {
                   },
                   keyboardType: TextInputType.text,
                 ),
+                TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) {
+                                return LupaPassword();
+                              }),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Lupa Password ?',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 14,
+                            color: yelowColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
                 SizedBox(
                   height: 70,
                 ),
@@ -185,9 +206,7 @@ class _LoginState extends State<Login> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 100,
-                ),
+
               ],
             ),
           ),

@@ -6,6 +6,7 @@ import 'package:cemanting_art/onboarding/onBoarding.dart';
 import 'package:cemanting_art/page/daftarTransaksi.dart';
 import 'package:cemanting_art/page/edit.dart';
 import 'package:cemanting_art/page/login.dart';
+import 'package:cemanting_art/page/lupaPassword.dart';
 import 'package:cemanting_art/page/notification.dart';
 import 'package:cemanting_art/page/pembayaran/pembayaranForm.dart';
 import 'package:cemanting_art/page/splashScreen.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: LupaPassword(),
       // home: HomePage(),
     );
   }
