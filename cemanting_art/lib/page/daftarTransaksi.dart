@@ -57,10 +57,10 @@ class _DaftarTransaksiState extends State<DaftarTransaksi> {
                       Expanded(
                         flex: 12,
                         child: Container(
-                  
+                          padding: EdgeInsets.only(top: 12),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Text("Baju Batik Modern",
                                   style: blackTextStyle.copyWith(
@@ -83,7 +83,7 @@ class _DaftarTransaksiState extends State<DaftarTransaksi> {
                               Row(
                                 children: <Widget>[
                                   Text(
-                                    'Harga : RP.13000',
+                                    'Harga : RP.130000',
                                     style: greyTextStyle.copyWith(
                                         fontWeight: FontWeight.w500, fontSize: 14),
                                   ),

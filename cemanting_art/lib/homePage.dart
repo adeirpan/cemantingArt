@@ -211,7 +211,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           BottomNavigationBarItem(
             icon: ImageIcon(
               AssetImage(
-                'assets/icon_wishlist.png',
+                'assets/iconlove.png',
               ),
             ),
             label: 'Wishlist',

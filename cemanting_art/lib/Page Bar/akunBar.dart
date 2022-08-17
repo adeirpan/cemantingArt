@@ -39,13 +39,13 @@ class AkunBar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Ade Irpan Hidayat',
+                      'Gamelab',
                       style: blackTextStyle.copyWith(
                         fontSize: 16,
                       ),
                     ),
                     Text(
-                      'adeirpan@gmail.com',
+                      'gamelab@gmail.com',
                       style: greyTextStyle.copyWith(
 
                         fontSize: 14

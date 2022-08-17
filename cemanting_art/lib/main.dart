@@ -10,6 +10,7 @@ import 'package:cemanting_art/page/notification.dart';
 import 'package:cemanting_art/page/pembayaran/pembayaranForm.dart';
 import 'package:cemanting_art/page/splashScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:onboarding/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: HomePage(),
       // home: HomePage(),
     );
   }

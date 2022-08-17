@@ -12,7 +12,7 @@ class SearchBar extends StatelessWidget {
         Container(
           height: 40,
           width: MediaQuery.of(context).size.width - 90,
-          child: TextField(
+          child: TextField(       
             decoration: InputDecoration(
               hintText: "Cari Barang Kamu .....",
               border: OutlineInputBorder(

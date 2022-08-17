@@ -61,7 +61,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             color: Color(0xff222222),
                           ),
                           child: Icon(
-                            Icons.edit,
+                            Icons.camera_alt,
                             color: Colors.white,
                           ),
                         )),

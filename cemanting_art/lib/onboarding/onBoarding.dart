@@ -254,7 +254,7 @@ class _OnBoardingState extends State<OnBoarding> {
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
+                              borderRadius: BorderRadius.circular(25.0),
                               // side: BorderSide(color: Colors.red),
                             ),
                           ),

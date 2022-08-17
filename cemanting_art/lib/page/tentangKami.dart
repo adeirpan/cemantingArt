@@ -35,7 +35,7 @@ class _TentangKamiState extends State<TentangKami> {
                   height: 20,
                 ),
                 Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suscipit nullam aliquet scelerisque quam id vitae lectus. Libero, ut amet risus habitasse purus ipsum egestas ut. Est viverra arcu commodo pulvinar ipsum euismod morbi fermentum risus. Vitae pretium elementum hendrerit netus at.',
+                    'Aplikasi ini dibuat untuk memberikan kemudahan bagi konstumer kami dalam bertransaksi di cemanting art.',
                     style: greyTextStyle.copyWith(
                       fontSize: 18,
                     )),
