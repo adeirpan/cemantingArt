@@ -1,8 +1,14 @@
+import 'package:cemanting_art/Widget/menuButtonCard.dart';
 import 'package:cemanting_art/Widget/productCard.dart';
+import 'package:cemanting_art/Widget/rowBaju.dart';
+import 'package:cemanting_art/Widget/rowSepatu.dart';
+import 'package:cemanting_art/Widget/rowTas.dart';
 import 'package:cemanting_art/Widget/searchBar.dart';
 import 'package:cemanting_art/model/product.dart';
 import 'package:cemanting_art/theme.dart';
 import 'package:flutter/material.dart';
+
+import '../model/menuButton.dart';
 
 class BarHome extends StatefulWidget {
   const BarHome({Key? key}) : super(key: key);
@@ -12,6 +18,8 @@ class BarHome extends StatefulWidget {
 }
 
 class _BarHomeState extends State<BarHome> {
+  int selectedMenu = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -72,104 +80,65 @@ class _BarHomeState extends State<BarHome> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 38,
-                        width: 89,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: blackButtonColor,
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Popular',
-                            style: greyTextStyle.copyWith(
-                              color: Colors.white,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
+                      onTap: () {
+                        setState(() {
+                          selectedMenu = 0;
+                        });
+                      },
+                      child: MenuButtonCard(
+                          menuButton: MenuButton(
+                              id: 0,
+                              selectedMenu: selectedMenu,
+                              buttonName: 'Popular')),
                     ),
                     SizedBox(
                       width: 20,
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 38,
-                        width: 89,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
-                          border: Border.all(
-                            color: blackColor,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Baju',
-                            style: greyTextStyle.copyWith(
-                              color: blackColor,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
+                      onTap: () {
+                        setState(() {
+                          selectedMenu = 1;
+                        });
+                      },
+                      child: MenuButtonCard(
+                          menuButton: MenuButton(
+                              id: 1,
+                              selectedMenu: selectedMenu,
+                              buttonName: 'Baju')),
                     ),
                     SizedBox(
                       width: 20,
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 38,
-                        width: 89,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
-                          border: Border.all(
-                            color: blackColor,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Sepatu',
-                            style: greyTextStyle.copyWith(
-                              color: blackColor,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
+                      onTap: () {
+                        setState(() {
+                          selectedMenu = 2;
+                        });
+                      },
+                      child: MenuButtonCard(
+                          menuButton: MenuButton(
+                              id: 2,
+                              selectedMenu: selectedMenu,
+                              buttonName: 'Sepatu')),
                     ),
                     SizedBox(
                       width: 20,
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 38,
-                        width: 89,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
-                          border: Border.all(
-                            color: blackColor,
-                          ),
-                        ),
-                        // color: Color(0xff222222),
-                        // width: 40,
-                        child: Center(
-                          child: Text(
-                            'Tas',
-                            style: greyTextStyle.copyWith(
-                              color: blackColor,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
+                      onTap: () {
+                        setState(() {
+                          selectedMenu = 3;
+                        });
+                      },
+                      child: MenuButtonCard(
+                        menuButton: MenuButton(
+                            id: 3,
+                            selectedMenu: selectedMenu,
+                            buttonName: 'Tas'),
                       ),
+                    ),
+                    SizedBox(
+                      width: 20,
                     ),
                   ],
                 ),
@@ -177,55 +146,41 @@ class _BarHomeState extends State<BarHome> {
               SizedBox(
                 height: 20,
               ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ProductCard(
-                    Product(
-                      name: 'Baju Batik',
-                      price: 130000,
-                      imageUrl: 'assets/produk1.png',
-                      discount: 0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 36,
-                  ),
-                  ProductCard(
-                    Product(
-                      name: 'Daster Batik',
-                      price: 115000,
-                      imageUrl: 'assets/produk2.png',
-                      discount: 0,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ProductCard(
-                    Product(
-                      name: 'Baju Batik',
-                      price: 130000,
-                      imageUrl: 'assets/produk1.png',
-                      discount: 0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 36,
-                  ),
-                  ProductCard(
-                    Product(
-                      name: 'Daster Batik',
-                      price: 115000,
-                      imageUrl: 'assets/produk2.png',
-                      discount: 0,
-                    ),
-                  ),
-                ],
-              ),
+              selectedMenu == 0
+                  ? Column(
+                      children: [
+                        RowBaju(),
+                        RowTas(),
+                        RowSepatu(),
+                      ],
+                    )
+                  : selectedMenu == 1
+                      ? Column(
+                          children: [
+                            RowBaju(),
+                            RowBaju(),
+                          ],
+                        )
+                      : selectedMenu == 2
+                          ? Column(
+                              children: [
+                                RowSepatu(),
+                                RowSepatu(),
+                              ],
+                            )
+                          : selectedMenu == 3
+                              ? Column(
+                                  children: [
+                                    RowTas(),
+                                    RowTas(),
+                                  ],
+                                )
+                              : Column(
+                                  children: [
+                                    RowSepatu(),
+                                    RowSepatu(),
+                                  ],
+                                )
             ],
           ),
         ),

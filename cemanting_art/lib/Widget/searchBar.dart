@@ -12,11 +12,18 @@ class SearchBar extends StatelessWidget {
         Container(
           height: 40,
           width: MediaQuery.of(context).size.width - 90,
-          child: TextField(       
-            decoration: InputDecoration(
-              hintText: "Cari Barang Kamu .....",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+          child: Center(
+            child: const TextField(
+              // style: TextStyle(
+              //   height: ,
+              // ),
+              decoration: InputDecoration(
+                hintText: "Cari Barang Kamu .....",
+                hintStyle: TextStyle(),
+                contentPadding: EdgeInsets.only(top: 20, left: 20),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                ),
               ),
             ),
           ),
